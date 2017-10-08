@@ -19,6 +19,7 @@ var ctx = canvas.getContext("2d");
 
 
 function draw(dist) {
+ alert("DIST "+dist);
  ctx.rect(dist,20,150,150);
  ctx.stroke();
 }
@@ -45,7 +46,8 @@ window.addEventListener('load', function(){
         var touchobj = e.changedTouches[0] // reference first touch point for this event
         var dist = parseInt(touchobj.clientX) - startx
         statusdiv.innerHTML = 'Status: touchmove<br> Horizontal distance traveled: ' + dist + 'px'
-        draw(dist);
+        alert("call draw");
+     draw(dist);
         e.preventDefault()
      
     }, false)
