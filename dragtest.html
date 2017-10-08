@@ -11,9 +11,14 @@
  
 <h3 id="statusdiv">Status</h3>
 
+<canvas id="canvas" width="2000" height="1000" style="position:absolute;top:0%;left:0px; z-index=1">
+</canvas>
+ 
 <script>
  
 window.addEventListener('load', function(){
+    var canvas = document.getElementById("canvas");
+    var	ctx = canvas.getContext("2d");
  
     var box1 = document.getElementById('box1')
     var statusdiv = document.getElementById('statusdiv')
@@ -32,6 +37,10 @@ window.addEventListener('load', function(){
         var dist = parseInt(touchobj.clientX) - startx
         statusdiv.innerHTML = 'Status: touchmove<br> Horizontal distance traveled: ' + dist + 'px'
         e.preventDefault()
+        ctx.beginPath();
+		      ctx.fillStyle = "#000000";
+		      ctx.rect(dist,300,100,100);
+		      ctx.fill();
     }, false)
  
     box1.addEventListener('touchend', function(e){
