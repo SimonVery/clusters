@@ -24,6 +24,9 @@ window.addEventListener('load', function(){
     var statusdiv = document.getElementById('statusdiv')
     var startx = 0
     var dist = 0
+    
+         ctx.rect(20,200,50,50);
+ctx.stroke();
  
     box1.addEventListener('touchstart', function(e){
         var touchobj = e.changedTouches[0] // reference first touch point (ie: first finger)
@@ -37,8 +40,6 @@ window.addEventListener('load', function(){
         var dist = parseInt(touchobj.clientX) - startx
         statusdiv.innerHTML = 'Status: touchmove<br> Horizontal distance traveled: ' + dist + 'px'
    
-     ctx.rect(20,200,50,50);
-ctx.stroke();
         e.preventDefault()
      
     }, false)
